@@ -1,4 +1,1 @@
-first
-second second
-third third third
-fourth fourth fourth fourth
+banana apple tomato onion cabbage cucumber apple

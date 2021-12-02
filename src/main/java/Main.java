@@ -6,8 +6,6 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    private static final String STRING_COUNT_TEMPLATE = "String: %s\nCount: %d\n";
-
     private static List<String> readFile(String fileName) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))){
             return reader.lines()
@@ -19,10 +17,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         List<String> strings = readFile("file.txt");
-        Set<String> stringSet = new HashSet<>(strings);
-        stringSet
-                .forEach(str -> {
-                    System.out.println(String.format(STRING_COUNT_TEMPLATE, str, Collections.frequency(strings, str)));
-                });
+        Collections.sort(strings);
+        System.out.println("Sorted: " + strings);
+        Collections.shuffle(strings);
+        System.out.println("Shuffled: " + strings);
     }
 }
